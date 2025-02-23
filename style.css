@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('roall.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.image-container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 2s ease-in-out forwards;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: zoomIn 1s ease-in-out forwards;
+}
+
+.content {
+    color: rgb(255, 255, 255);
+    display: -ms-grid;
+    place-items: center; /* Centers content horizontally and vertically */
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.button, .social-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #08c47c94;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: slideIn 1s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.button:hover, .social-button:hover {
+    background-color: #1971acaf;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(170, 15, 231, 0.8); /* Lighting/glow effect */
+}
+
+/* Align social media buttons horizontally */
+.social-links {
+    margin-top: 20px;
+    display: flex; /* This ensures the social buttons are in a row */
+    justify-content: center; /* Center the buttons */
+    gap: 15px; /* Space between buttons */
+}
+
+.social-button {
+    background-color: #3b5998; /* Facebook color */
+    width: 50px; /* Set a specific width for the button */
+    height: 50px; /* Set a specific height for the button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Circular shape */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.social-button:nth-child(2) {
+    background-color: #0077b5; /* LinkedIn color */
+}
+
+.social-button:first-child {
+    background-color: #e4405f; /* Instagram color */
+}
+
+/* Icon styling */
+.social-button i {
+    font-size: 24px; /* Icon size */
+    color: white; /* Icon color */
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+/* Lighting effect for the icon */
+.social-button:hover i {
+    text-shadow: 0 0 10px rgba(238, 238, 238, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
